@@ -20,6 +20,14 @@ models:
         description: Two letters code of the state, territory or military region.
         data_tests:
           - not_null
+      - name: username_normalized
+        description: Username in lowercase with leading and trailing spaces removed.
+        data_tests:
+          - not_null
+      - name: birthdate_is_valid
+        description: Whether the original birthdate is present and does not fall after the first order; users without orders pass if their birthdate is present.
+        data_tests:
+          - not_null
 
   - name: stg_orders
     description: One row per order, typed and deduplicated.
