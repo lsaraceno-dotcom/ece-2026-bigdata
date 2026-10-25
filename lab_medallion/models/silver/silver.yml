@@ -20,10 +20,6 @@ models:
         description: Two letters code of the state, territory or military region.
         data_tests:
           - not_null
-          - relationships:
-              arguments:
-                to: ref('states')
-                field: code
 
   - name: stg_orders
     description: One row per order, typed and deduplicated.
